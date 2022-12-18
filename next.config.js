@@ -74,9 +74,9 @@ module.exports = withBundleAnalyzer({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'assets.vercel.com',
+        hostname: 'evansims.com',
         port: '',
-        pathname: '/image/upload/**',
+        pathname: '/images/**',
       },
     ],
   },
