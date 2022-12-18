@@ -14,7 +14,7 @@
     },
     {
       "source": "/.well-known/host-meta",
-      "destination": "https://mastadon.evansims.com/.well-known/host-meta"
+      "destination": "https://social.evansims.com/.well-known/host-meta"
     },
     {
       "source": "/nodeinfo/(.*)",
