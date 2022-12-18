@@ -48,7 +48,7 @@ const siteMetadata = {
       lang: 'en',
       darkTheme: 'transparent_dark',
       themeURL: '',
-    }.
+    },
   },
 }
 
