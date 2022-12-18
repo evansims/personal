@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/oauth/(.*)",
+      "destination": "https://social.evansims.com/oauth/$1"
+    },
+    {
+      "source": "/.well-known/webfinger",
+      "destination": "https://social.evansims.com/.well-known/webfinger"
+    },
+    {
+      "source": "/.well-known/nodeinfo",
+      "destination": "https://social.evansims.com/.well-known/nodeinfo"
+    },
+    {
+      "source": "/.well-known/host-meta",
+      "destination": "https://mastadon.evansims.com/.well-known/host-meta"
+    },
+    {
+      "source": "/nodeinfo/(.*)",
+      "destination": "https://social.evansims.com/nodeinfo/$1"
+    }
+  ]
+}
