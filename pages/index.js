@@ -47,7 +47,9 @@ export default function Home({ posts }) {
                           </h2>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          <Link href={`/blog/${slug}`} aria-label={`Read "${title}"`}>{summary}</Link>
+                          <Link href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
+                            {summary}
+                          </Link>
                         </div>
                       </div>
                     </div>
