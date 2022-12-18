@@ -55,9 +55,11 @@ const securityHeaders = [
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
+
   async headers() {
     return [
       {
@@ -66,6 +68,19 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
+
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets.vercel.com',
+        port: '',
+        pathname: '/image/upload/**',
+      },
+    ],
+  },
+
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,
