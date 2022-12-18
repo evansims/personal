@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Evan Sims',
   author: 'Evan Sims',
   headerTitle: 'Evan Sims',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'Thoughts on software development, technology, and life.',
   language: 'en-us',
   theme: 'dark',
   siteUrl: 'https://evansims.com',
