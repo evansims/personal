@@ -22,7 +22,7 @@ const LayoutWrapper = ({ children }) => {
               <div className="flex items-center justify-between">
                 <div className="mr-3">
                   <Image
-                    loader={myLoader}
+                    loader={imageLoader}
                     src="/static/images/evansims.png"
                     alt="Evan Sims"
                     width={64}
