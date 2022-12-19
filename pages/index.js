@@ -7,7 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 
 import NewsletterForm from '@/components/NewsletterForm'
 
-const MAX_DISPLAY = 5
+const MAX_DISPLAY = 10
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -19,40 +19,36 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div>
+        <h2 className="pb-3 font-medium text-neutral-500">Recent Posts</h2>
+        <ul>
           {!posts.length && 'No posts found.'}
+
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
+
             return (
-              <li key={slug} className="py-12">
+              <li key={slug}>
                 <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
+                  <div className="space-y-2 leading-6 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                    <div className="space-y-5 xl:col-span-3">
+                      <div>
+                        <h3>
+                          <Link
+                            href={`/blog/${slug}`}
+                            className="block py-3 text-neutral-200 decoration-neutral-500 underline-offset-4 transition-colors duration-100 hover:text-white hover:underline"
+                          >
+                            {title}
+                          </Link>
+                        </h3>
+                      </div>
+                    </div>
+                    <dl className="text-right">
                       <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <dd className="text-neutral-500">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                     </dl>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h2>
-                        </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          <Link href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                            {summary}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </article>
               </li>
@@ -61,21 +57,21 @@ export default function Home({ posts }) {
         </ul>
       </div>
       {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-medium leading-6">
+        <div className="flex py-3 leading-6">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            className="block text-neutral-500 decoration-neutral-500 underline-offset-4 transition-colors duration-100 hover:text-white hover:underline"
             aria-label="all posts"
           >
-            All Posts &rarr;
+            Previous Posts &rarr;
           </Link>
         </div>
       )}
-      {siteMetadata.newsletter.provider !== '' && (
+      {/* {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
         </div>
-      )}
+      )} */}
     </>
   )
 }

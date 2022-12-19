@@ -78,6 +78,12 @@ module.exports = withBundleAnalyzer({
         port: '',
         pathname: '/images/**',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost:3000',
+        port: '',
+        pathname: '/images/**',
+      },
     ],
   },
 
