@@ -48,7 +48,7 @@ const LayoutWrapper = ({ children }) => {
 
           <div className="flex grow overflow-y-auto pt-6">
             <h2 className="sr-only">Navigation</h2>
-            <nav class="leading-loose">
+            <nav className="leading-loose">
               <ul>
                 <li>
                   <Link
@@ -102,9 +102,9 @@ const LayoutWrapper = ({ children }) => {
             </nav>
           </div>
 
-          <footer class="flex-shrink-0">
-            <nav class="leading-loose">
-              <h2 class="text-neutral-500">Elsewhere</h2>
+          <footer className="flex-shrink-0">
+            <nav className="leading-loose">
+              <h2 className="text-neutral-500">Elsewhere</h2>
               <ul>
                 <li>
                   <Link
